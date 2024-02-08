@@ -41,3 +41,9 @@ HeadStudio excels at producing high-fidelity head avatars, yielding superior res
 </p>
 Comparison with the text to dynamic avatar generation methods.
 HeadStudio provides effective semantic alignment, smooth expression deformation, and real-time rendering.
+
+## Acknowledgements
+- HeadStudio is developed by ReLER at Zhejiang University, all copyright reserved.
+- Our work is highly inspired by [INSTA](https://arxiv.org/pdf/2211.12499v2.pdf) and [GaussianAvatars](https://arxiv.org/pdf/2312.02069.pdf). Thanks for their great works!
+- Thanks [ThreeStudio](https://github.com/threestudio-project/threestudio), we use it as base framework.
+- Thanks [TalkSHOW](https://arxiv.org/pdf/2212.04420.pdf), we use it for audio-based avatar driven.

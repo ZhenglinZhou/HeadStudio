@@ -1,7 +1,7 @@
 <div align="center">
 <h1>HeadStudio: Text to Animatable Head Avatars with 3D Gaussian Splatting</h1>
 
-[**Zhenglin Zhou**](https://scholar.google.com/citations?user=6v7tOfEAAAAJ) · [**Fan Ma**](https://flowerfan.site/) · [**Hehe Fan**](https://hehefan.github.io/) · [**Yang Yi<sup>*</sup>**](https://scholar.google.com/citations?user=RMSuNFwAAAAJ)
+[**Zhenglin Zhou**](https://scholar.google.com/citations?user=6v7tOfEAAAAJ) · [**Fan Ma**](https://flowerfan.site/) · [**Hehe Fan**](https://hehefan.github.io/) · [**Yi Yang<sup>*</sup>**](https://scholar.google.com/citations?user=RMSuNFwAAAAJ)
 
 ReLER, CCAI, Zhejiang University 
 

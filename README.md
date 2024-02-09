@@ -49,7 +49,7 @@ HeadStudio provides effective semantic alignment, smooth expression deformation,
 - Thanks [TalkSHOW](https://arxiv.org/pdf/2212.04420.pdf), we use it for audio-based avatar driven.
 
 ## Cite
-If you find InstantID useful for your research and applications, please cite us using this BibTeX:
+If you find HeadStudio useful for your research and applications, please cite us using this BibTeX:
 
 ```bibtex
 @article{zhou2024headstudio,

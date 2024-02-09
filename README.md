@@ -1,13 +1,13 @@
 <div align="center">
 <h1>HeadStudio: Text to Animatable Head Avatars with 3D Gaussian Splatting</h1>
 
-[**Zhenglin Zhou**](https://scholar.google.com/citations?user=6v7tOfEAAAAJ&hl=zh-CN)<sup>1</sup> · [**Fan Ma**](https://scholar.google.com/citations?hl=zh-CN&user=FyglsaAAAAAJ&view_op=list_works&sortby=pubdate)<sup>1</sup> · [**Hehe Fan**](https://hehefan.github.io/)<sup>1</sup> · [**Yang Yi**](https://scholar.google.com/citations?user=RMSuNFwAAAAJ&hl=zh-CN)<sup>1*</sup>
+[**Zhenglin Zhou**](https://scholar.google.com/citations?user=6v7tOfEAAAAJ)<sup>1</sup> · [**Fan Ma**](https://flowerfan.site/)<sup>1</sup> · [**Hehe Fan**](https://hehefan.github.io/)<sup>1</sup> · [**Yang Yi**](https://scholar.google.com/citations?user=RMSuNFwAAAAJ)<sup>1*</sup>
 
 <sup>1</sup>ReLER, CCAI, Zhejiang University 
 
 <sup>*</sup>corresponding authors
 
-<a href=''><img src='https://img.shields.io/badge/Project-Page-green'></a>
+<a href='https://zhenglinzhou.github.io/HeadStudio-ProjectPage/'><img src='https://img.shields.io/badge/Project-Page-green'></a>
 <a href='./docs/technical-report.pdf'><img src='https://img.shields.io/badge/Technique-Report-red'></a>
 [![GitHub](https://img.shields.io/github/stars/ZhenglinZhou/HeadStudio?style=social)](https://github.com/ZhenglinZhou/HeadStudio/)
 
@@ -45,5 +45,18 @@ HeadStudio provides effective semantic alignment, smooth expression deformation,
 ## Acknowledgements
 - HeadStudio is developed by ReLER at Zhejiang University, all copyright reserved.
 - Our work is highly inspired by [INSTA](https://arxiv.org/pdf/2211.12499v2.pdf) and [GaussianAvatars](https://arxiv.org/pdf/2312.02069.pdf). Thanks for their great works!
-- Thanks [ThreeStudio](https://github.com/threestudio-project/threestudio), we use it as base framework.
+- Thanks [threestudio](https://github.com/threestudio-project/threestudio), we use it as base framework.
+- Thanks [PlayHT](https://play.ht/), we use it for text to audio generation.
 - Thanks [TalkSHOW](https://arxiv.org/pdf/2212.04420.pdf), we use it for audio-based avatar driven.
+
+## Cite
+If you find InstantID useful for your research and applications, please cite us using this BibTeX:
+
+```bibtex
+@article{zhou2024headstudio,
+  title = {HeadStudio: Text to Animatable Head Avatars with 3D Gaussian Splatting},
+  author = {Zhenglin Zhou, Fan Ma, Hehe Fan, Yi Yang},
+  journal={arXiv preprint},
+  year={2024}
+}
+```

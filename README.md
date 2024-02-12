@@ -8,7 +8,7 @@ ReLER, CCAI, Zhejiang University
 <sup>*</sup>corresponding authors
 
 <a href='https://zhenglinzhou.github.io/HeadStudio-ProjectPage/'><img src='https://img.shields.io/badge/Project-Page-green'></a>
-<a href='./docs/technical-report.pdf'><img src='https://img.shields.io/badge/Technique-Report-red'></a>
+<a href='https://arxiv.org/abs/2402.06149'><img src='https://img.shields.io/badge/Technique-Report-red'></a>
 [![GitHub](https://img.shields.io/github/stars/ZhenglinZhou/HeadStudio?style=social)](https://github.com/ZhenglinZhou/HeadStudio/)
 
 https://github.com/ZhenglinZhou/HeadStudio/assets/42434623/19893d52-8fe5-473d-b5c0-aea29d6be21a
@@ -53,9 +53,9 @@ If you find HeadStudio useful for your research and applications, please cite us
 
 ```bibtex
 @article{zhou2024headstudio,
+  author = {Zhenglin Zhou and Fan Ma and Hehe Fan and Yi Yang},
   title = {HeadStudio: Text to Animatable Head Avatars with 3D Gaussian Splatting},
-  author = {Zhenglin Zhou, Fan Ma, Hehe Fan, Yi Yang},
-  journal={arXiv preprint},
+  journal={arXiv preprint arXiv:2402.06149},
   year={2024}
 }
 ```

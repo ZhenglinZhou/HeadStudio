@@ -54,21 +54,22 @@ git clone --recursive https://github.com/ashawkey/diff-gaussian-rasterization
 pip install ./diff-gaussian-rasterization
 ```
 
-* In order to run this tool, you need to download FLAME. Before you continue, you must register and agree to license terms at: https://flame.is.tue.mpg.de
-* If you have registered and agreed to the license terms at https://flame.is.tue.mpg.de, download the FLAME ckpts and training/validation files from [here](https://pan.baidu.com/s/1BdFmOMNT4gWhqUKFuZWx9A?pwd=pkwj).
+* HeadStudio is built on the FLAME. Before you continue, please kindly register and agree to the license from https://flame.is.tue.mpg.de.
+* Download `FLAME 2020` which contains `FLAME_FEMALE.pkl`, `FLAME_GENERIC.pkl`, `FLAME_MAKE.pkl` from https://flame.is.tue.mpg.de.
+* Download other ckpts and training/validation files from [here](https://pan.baidu.com/s/1BdFmOMNT4gWhqUKFuZWx9A?pwd=pkwj).
 * Make the folder like this:
 ```
 .
 |-ckpts
-    # ControlNet-Mediapipe
-    |-flame2facemsh.npy
-    |-mediapipe_landmark_embedding.npz
-    # FLAME-2000
-    |-FLAME_FEMALE.pkl
-    |-FLAME_GENERIC.pkl
-    |-FLAME_MAKE.pkl
-    |-flame_static_embeddings.pkl
-    |-flame_dynamic_embeddings.pkl
+    |-ControlNet-Mediapipe
+        |-flame2facemsh.npy
+        |-mediapipe_landmark_embedding.npz
+    |-FLAME-2000
+        |-FLAME_FEMALE.pkl
+        |-FLAME_GENERIC.pkl
+        |-FLAME_MAKE.pkl
+        |-flame_static_embeddings.pkl
+        |-flame_dynamic_embeddings.pkl
 |-talkshow
     # for training with animation
     |-collection

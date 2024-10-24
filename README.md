@@ -1,7 +1,7 @@
 <div align="center">
 <h1>HeadStudio: Text to Animatable Head Avatars with 3D Gaussian Splatting</h1>
 
-[**Zhenglin Zhou**](https://scholar.google.com/citations?user=6v7tOfEAAAAJ) · [**Fan Ma**](https://flowerfan.site/) · [**Hehe Fan**](https://hehefan.github.io/) · [**Yi Yang<sup>*</sup>**](https://scholar.google.com/citations?user=RMSuNFwAAAAJ)
+[**Zhenglin Zhou**](https://scholar.google.com/citations?user=6v7tOfEAAAAJ) · [**Fan Ma**](https://flowerfan.site/) · [**Hehe Fan**](https://hehefan.github.io/) · [**Zongxin Yang**](https://z-x-yang.github.io/) · [**Yi Yang<sup>*</sup>**](https://scholar.google.com/citations?user=RMSuNFwAAAAJ)
 
 ReLER, CCAI, Zhejiang University 
 
@@ -23,39 +23,118 @@ https://github.com/ZhenglinZhou/HeadStudio/assets/42434623/19893d52-8fe5-473d-b5
 
 Text-based animatable avatars generation by **HeadStudio**.
 
-### Comparison with Previous Works
+## Installation
+All the followings have been tested successfully in **cuda 11.8**.
+```bash
+# clone the github repo
+git clone https://github.com/zhenglinzhou/HeadStudio-open.git
+cd HeadStudio-open
+```
 
-<p align="center">
-<img src="./assets/comparison_static_avatar.png">
-</p>
+Create a conda environment:
+```bash
+# make a new conda env (optional)
+conda create -n headstudio python=3.9
+conda activate headstudio
+```
 
-Comparison with the text to static avatar generation methods.
-HeadStudio excels at producing high-fidelity head avatars, yielding superior results.
+It may take some time to install:
+```bash
+# install necessary packages
+pip install torch==2.0.1+cu118 torchvision==0.15.2+cu118 torchaudio==2.0.2 --index-url https://download.pytorch.org/whl/cu118
 
-<p align="center">
-<img src="./assets/comparison_dynamic_avatar.png">
-</p>
+# install some packages using conda
+bash packages.sh
 
-<p align="center">
-<img src="./assets/comparison_dynamic_avatar_2.png">
-</p>
-Comparison with the text to dynamic avatar generation methods.
-HeadStudio provides effective semantic alignment, smooth expression deformation, and real-time rendering.
+# install packages using pip
+pip install -r requirements.txt
+
+# a modified gaussian splatting (+ depth, alpha rendering)
+git clone --recursive https://github.com/ashawkey/diff-gaussian-rasterization
+pip install ./diff-gaussian-rasterization
+```
+
+* In order to run this tool, you need to download FLAME. Before you continue, you must register and agree to license terms at: https://flame.is.tue.mpg.de
+* If you have registered and agreed to the license terms at https://flame.is.tue.mpg.de, download the FLAME ckpts and training/validation files from [here](https://pan.baidu.com/s/1BdFmOMNT4gWhqUKFuZWx9A?pwd=pkwj).
+* Make the folder like this:
+```
+.
+|-ckpts
+    # ControlNet-Mediapipe
+    |-flame2facemsh.npy
+    |-mediapipe_landmark_embedding.npz
+    # FLAME-2000
+    |-FLAME_FEMALE.pkl
+    |-FLAME_GENERIC.pkl
+    |-FLAME_MAKE.pkl
+    |-flame_static_embeddings.pkl
+    |-flame_dynamic_embeddings.pkl
+|-talkshow
+    # for training with animation
+    |-collection
+        |-cemistry_exp.npy
+    # for evaluation
+    |-ExpressiveWholeBodyDatasetReleaseV1.0
+...
+```
+* Specify the `talkshow_train_path` and `talkshow_val_path` in `./configs/headstudio.yaml`.
+
+## Usage
+
+```bash
+python3 launch.py \
+--config configs/headstudio.yaml --train system.prompt_processor.prompt='a DSLR portrait of Joker in DC, masterpiece, Studio Quality, 8k, ultra-HD, next generation' \
+system.guidance.use_nfsd=True system.max_grad=0.001 system.area_relax=True
+```
+
+More examples can be found in `./scripts/headstudio.sh`
+
+
+## Prepare Animation Data
+1. Install [TalkSHOW](https://github.com/yhw-yhw/TalkSHOW).
+2. Download SHOW_dataset_v1.0.zip following [this](https://github.com/yhw-yhw/TalkSHOW?tab=readme-ov-file#2-get-data).
+
+
+## Animation
+### Video-based Animation
+Animate the avatar using .pkl file captured from video clip (SHOW_dataset_v1.0.zip).
+```shell
+python3 animation.py
+```
+### Audio-based Animation
+* Copy the ./scripts/demo.py into TalkSHOW/scripts. 
+* Specify the save root in demo.py.
+* Given an audio clip, generate FLAME sequences via TalkSHOW.
+```shell
+cd TalkSHOW
+python3 demo.py \
+--config_file./config/body_pixel.json --infer --audio_file path-to-wav-file \
+--id 0 --only_face
+```
+
+* Animate avatars using generated FLAME sequences via TalkSHOW.
+```shell
+python3 animation_TalkSHOW.py --audio path-to-audio --avatar path-to-avatar
+```
+
+### Text-based Animation
+* Generate the audio with given text using [PlayHT](https://play.ht/). 
+* Transfer to audio-based animation.
 
 ## Acknowledgements
 - HeadStudio is developed by ReLER at Zhejiang University, all copyright reserved.
-- Thanks [threestudio](https://github.com/threestudio-project/threestudio), we use it as base framework.
 - Thanks [PlayHT](https://play.ht/), we use it for text to audio generation.
 - Thanks [TalkSHOW](https://arxiv.org/pdf/2212.04420.pdf), we use it for audio-based avatar driven.
+- Thanks [threestudio](https://github.com/threestudio-project/threestudio), [GaussianAvatars](https://github.com/ShenhanQian/GaussianAvatars/tree/main), [HumanGaussian](https://github.com/alvinliu0/HumanGaussian), [TADA](https://github.com/TingtingLiao/TADA), this work is built on these amazing research works.
 
 ## Cite
 If you find HeadStudio useful for your research and applications, please cite us using this BibTeX:
 
 ```bibtex
 @article{zhou2024headstudio,
-  author = {Zhenglin Zhou and Fan Ma and Hehe Fan and Yi Yang},
+  author = {Zhenglin Zhou and Fan Ma and Hehe Fan and Zongxin Yang and Yi Yang},
   title = {HeadStudio: Text to Animatable Head Avatars with 3D Gaussian Splatting},
-  journal={arXiv preprint arXiv:2402.06149},
+  journal={ECCV},
   year={2024}
 }
 ```

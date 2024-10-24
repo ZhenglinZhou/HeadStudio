@@ -8,7 +8,7 @@ ReLER, CCAI, Zhejiang University
 <sup>*</sup>corresponding authors
 
 <a href='https://zhenglinzhou.github.io/HeadStudio-ProjectPage/'><img src='https://img.shields.io/badge/Project-Page-green'></a>
-<a href='https://arxiv.org/abs/2402.06149'><img src='https://img.shields.io/badge/Technique-Report-red'></a>
+<a href='https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/04681.pdf'><img src='https://img.shields.io/badge/Technique-Report-red'></a>
 [![GitHub](https://img.shields.io/github/stars/ZhenglinZhou/HeadStudio?style=social)](https://github.com/ZhenglinZhou/HeadStudio/)
 
 https://github.com/ZhenglinZhou/HeadStudio/assets/42434623/19893d52-8fe5-473d-b5c0-aea29d6be21a
@@ -123,9 +123,13 @@ python3 animation_TalkSHOW.py --audio path-to-audio --avatar path-to-avatar
 
 ## Acknowledgements
 - HeadStudio is developed by ReLER at Zhejiang University, all copyright reserved.
+- Thanks [Duochao](https://github.com/dc-walker) and [Xuancheng](https://github.com/Maplefaith) to fix bugs and further develop this work.
 - Thanks [PlayHT](https://play.ht/), we use it for text to audio generation.
 - Thanks [TalkSHOW](https://arxiv.org/pdf/2212.04420.pdf), we use it for audio-based avatar driven.
 - Thanks [threestudio](https://github.com/threestudio-project/threestudio), [GaussianAvatars](https://github.com/ShenhanQian/GaussianAvatars/tree/main), [HumanGaussian](https://github.com/alvinliu0/HumanGaussian), [TADA](https://github.com/TingtingLiao/TADA), this work is built on these amazing research works.
+
+## Notes
+* If you have questions or find bugs, feel free to open an issue or email the first author (zhenglinzhou@zju.edu.cn)!
 
 ## Cite
 If you find HeadStudio useful for your research and applications, please cite us using this BibTeX:

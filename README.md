@@ -136,10 +136,10 @@ python3 animation_TalkSHOW.py --audio path-to-audio --avatar path-to-avatar
 If you find HeadStudio useful for your research and applications, please cite us using this BibTeX:
 
 ```bibtex
-@article{zhou2024headstudio,
-  author = {Zhenglin Zhou and Fan Ma and Hehe Fan and Zongxin Yang and Yi Yang},
+@inproceedings{zhou2024headstudio,
   title = {HeadStudio: Text to Animatable Head Avatars with 3D Gaussian Splatting},
-  journal={ECCV},
-  year={2024}
+  author = {Zhenglin Zhou and Fan Ma and Hehe Fan and Zongxin Yang and Yi Yang},
+  booktile = {ECCV},
+  year={2024},
 }
 ```

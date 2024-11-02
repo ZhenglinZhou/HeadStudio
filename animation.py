@@ -68,7 +68,7 @@ class Avatar:
         cameras_extent = 4.0
         flame_scale = -10.0
         gaussian.create_from_flame(cameras_extent, flame_scale)
-        # gaussian.load_ply(ply_path)
+        gaussian.load_ply(ply_path)
 
         self.black_background = torch.tensor([0, 0, 0], dtype=torch.float32, device="cuda")
         self.white_background = torch.tensor([1, 1, 1], dtype=torch.float32, device="cuda")

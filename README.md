@@ -92,7 +92,10 @@ More examples can be found in `./scripts/headstudio.sh`
 
 
 ## Prepare Animation Data
-1. Install [TalkSHOW](https://github.com/yhw-yhw/TalkSHOW).
+1. Install [TalkSHOW](https://github.com/yhw-yhw/TalkSHOW). You had better use another python environment for following animation, since TalkSHOW needs python 3.7.
+
+please remember to install `torchaudio~=0.13.1`, `torchvision~=0.14.1`.
+ 
 2. Download SHOW_dataset_v1.0.zip following [this](https://github.com/yhw-yhw/TalkSHOW?tab=readme-ov-file#2-get-data).
 
 
@@ -103,13 +106,13 @@ Animate the avatar using .pkl file captured from video clip (SHOW_dataset_v1.0.z
 python3 animation.py
 ```
 ### Audio-based Animation
-* Copy the ./scripts/demo.py into TalkSHOW/scripts. 
-* Specify the save root in demo.py.
-* Given an audio clip, generate FLAME sequences via TalkSHOW.
+* Copy the ./scripts/demo.py into TalkSHOW folder. 
+* Specify the `save_root` in demo.py.
+* Given an audio clip, generate FLAME sequences via TalkSHOW as below, please specify `path-to-wav-file`.
 ```shell
 cd TalkSHOW
 python3 demo.py \
---config_file./config/body_pixel.json --infer --audio_file path-to-wav-file \
+--config_file ./config/body_pixel.json --infer --audio_file path-to-wav-file \
 --id 0 --only_face
 ```
 

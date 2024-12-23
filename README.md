@@ -134,6 +134,7 @@ python3 animation_TalkSHOW.py --audio path-to-audio --avatar path-to-avatar
 
 ## Notes
 * If you have questions or find bugs, feel free to open an issue or email the first author (zhenglinzhou@zju.edu.cn)!
+* If you encounter `RuntimeError: an illegal memory access was encountered` or `numel: integer multiplication overflow` errors during rasterization, try to reinstall diff-gaussian-rasterization with `-fno-gnu-unique` flag. For more details look [here](https://github.com/graphdeco-inria/gaussian-splatting/issues/41#issuecomment-1752279620) 
 
 ## Cite
 If you find HeadStudio useful for your research and applications, please cite us using this BibTeX:

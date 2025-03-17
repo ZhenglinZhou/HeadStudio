@@ -139,7 +139,7 @@ If you find HeadStudio useful for your research and applications, please cite us
 @inproceedings{zhou2024headstudio,
   title = {HeadStudio: Text to Animatable Head Avatars with 3D Gaussian Splatting},
   author = {Zhenglin Zhou and Fan Ma and Hehe Fan and Zongxin Yang and Yi Yang},
-  booktile = {ECCV},
+  booktitle = {ECCV},
   year={2024},
 }
 ```
